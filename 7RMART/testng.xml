@@ -9,13 +9,14 @@
  
     <classes>
     
-      <class name="TestScript.LoginTest">     
-      <methods>
-      
-      <include name="verifyTheUserIsAbleToLoginUsingValidCredentials"></include>  
-      															
-      </methods>
-      </class>
+      <class name="TestScript.LoginTest"></class>
+      <class name="TestScript.AdminUserTest"></class>
+      <class name="TestScript.HomePageLogoutTest"></class>
+      <class name="TestScript.ManageCatagoryTest"></class>
+      <class name="TestScript.ManageNewsTest"></class>
+       
       </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+
+

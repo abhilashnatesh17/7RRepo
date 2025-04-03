@@ -14,12 +14,12 @@ public class AdminUserPage {
 		PageFactory.initElements(driver, this); 
 	}
 //	@FindBy(xpath="(//a[@class='small-box-footer'])[1]")private WebElement adminuser;
-	@FindBy(xpath="//a[@onclick='click_button(1)']")private WebElement newvalue;
+	@FindBy(xpath="//a[@onclick='click_button(1)']")private WebElement adminuserpageclicknewvalue;
 	@FindBy(xpath="//input[@id='username']")private WebElement usernamevalue;
 	@FindBy(xpath="//input[@id='password']")private WebElement passwordvalue;
 	@FindBy(xpath="//select[@name='user_type']")private WebElement usertype;
-	@FindBy(xpath="//button[@name='Create']")private WebElement save;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")private WebElement alert;
+	@FindBy(xpath="//button[@name='Create']")private WebElement adminuserpagesavebutton;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")private WebElement isadminuserpagealert;
 	@FindBy(xpath="(//i[@class='fas fa-trash-alt'])[7]")private WebElement deleteuser;
 	
 	
@@ -27,42 +27,42 @@ public class AdminUserPage {
 	{
 		adminuser.click();
 	} */
-	public AdminUserPage newvalue()
+	public AdminUserPage enterTheNewValue()
 	{
-		newvalue.click();
+		adminuserpageclicknewvalue.click();
 		return this;
 	}
-	public AdminUserPage usernamevalue(String adminusername)
+	public AdminUserPage userNameValue(String adminusername)
 	{
 		usernamevalue.sendKeys(adminusername);
 		return this;
 	}
-	public AdminUserPage passwordvalue(String adminpassword)
+	public AdminUserPage passwordValue(String adminpassword)
 	{
 		passwordvalue.sendKeys(adminpassword);
 		return this;
 	}
 
-	public AdminUserPage usertype()
+	public AdminUserPage userType()
 	{
 		Select select=new Select(usertype);
 		select.selectByIndex(4);
 		return this;
 	}
-	public AdminUserPage save()
+	public AdminUserPage adminUserPageSave()
 	{
-		save.click();
+		adminuserpagesavebutton.click();
 		return this;
 	}
-	public AdminUserPage deleteuser()
+	public AdminUserPage deleteUser()
 	{
 		deleteuser.click();
 		driver.switchTo().alert().accept();
 		return this;
 	}	
-	public boolean alert()
+	public boolean adminUserPageAlert()
 	{
-		return alert.isDisplayed();
+		return isadminuserpagealert.isDisplayed();
 	}
 
 }

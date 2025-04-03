@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Utilities.WaitUtilities;
+
 public class ManageCatagoryPage {
 	
 WebDriver driver;
@@ -60,6 +62,9 @@ WebDriver driver;
 	}
 	public ManageCatagoryPage clickSearch()
 	{
+//		WaitUtilities waitutilities =new WaitUtilities();
+//		waitutilities.waitForElementToBeClickable(driver, ClickSearch);
+		
 		ClickSearch.click();
 		return this;
 	}

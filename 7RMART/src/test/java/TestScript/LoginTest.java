@@ -12,7 +12,7 @@ import Utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 	
-	@Test
+	@Test(description="verify The User Is Able To Login Using Valid Credentials")
 	public void verifyTheUserIsAbleToLoginUsingValidCredentials() throws IOException
 	{
 	//	String username="admin";	
@@ -29,7 +29,7 @@ public class LoginTest extends Base {
 		boolean isloaded=loginPage.isHomePageLoaded();
 		Assert.assertTrue(isloaded, Constant.VERIFYTHEUSERISABLETOLOGINUSINGVALIDCREDENTIALS);
 	}
-	@Test 
+	@Test (description="verify The User Is Able To Login Using Correct Username And WrongPassword")
 	public void verifyTheUserIsAbleToLoginUsingCorrectUsernameAndWrongPassword() throws IOException
 	{
 				
@@ -43,10 +43,10 @@ public class LoginTest extends Base {
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 		loginPage.signIn();
-		boolean alertValue=loginPage.redAlert();
+		boolean alertValue=loginPage.loginPageRedAlert();
 		Assert.assertTrue(alertValue, Constant.VERIFYTHEUSERISABLETOLOGINUSINGCORRECTUSERNAMEANDWRONGPASSWORD);
 	} 
-	@Test
+	@Test (description="verify The User Is Able To Login Using InCorrect Username And Correct Password")
 	public void verifyTheUserIsAbleToLoginUsingInCorrectUsernameAndCorrectPassword() throws IOException
 	{
 				
@@ -60,10 +60,10 @@ public class LoginTest extends Base {
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 		loginPage.signIn();
-		boolean inCorrect=loginPage.incorrectUsername();
+		boolean inCorrect=loginPage.loginPageRedAlert();
 		Assert.assertTrue(inCorrect, Constant.VERIFYTHEUSERISABLETOLOGINUSINGINCORRECTUSERNAMEANDCORRECTPASSWORD);
 	}	
-	@Test
+	@Test (description="verify The User Is Able To Login Using InCorrect Username And InCorrect Password")
 	public void verifyTheUserIsAbleToLoginUsingInCorrectUsernameAndInCorrectPassword() throws IOException 
 	{
 				
@@ -77,7 +77,7 @@ public class LoginTest extends Base {
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 		loginPage.signIn();
-		boolean inCorrectUserandPass=loginPage.IncorrectUsernameAndPassword();
+		boolean inCorrectUserandPass=loginPage.loginPageRedAlert();
 		Assert.assertTrue(inCorrectUserandPass, Constant.VERIFYTHEUSERISABLETOLOGINUSINGINCORRECTUSERNAMEANDINCORRECTPASSWORD);
 	}
 

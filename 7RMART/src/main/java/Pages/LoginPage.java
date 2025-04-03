@@ -17,8 +17,8 @@ WebDriver driver;
 	@FindBy(xpath="//input[@type='text']")private WebElement usernameField;
 	@FindBy(xpath="//input[@name='password']")private WebElement passwordField;
 	@FindBy(xpath="//button[@type='submit']")private WebElement signin;
-	@FindBy(xpath="//p[text()='Dashboard']")private WebElement dashboard;
-	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")private WebElement alert;
+	@FindBy(xpath="//p[text()='Dashboard']")private WebElement loginpagedashboard;
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")private WebElement loginpagealert;
 	
 	public LoginPage enterUsername(String username)
 	{
@@ -35,21 +35,12 @@ WebDriver driver;
 		signin.click();
 		return new HomePageLogoutPage(driver);
 	}
-	public boolean redAlert()
+	public boolean loginPageRedAlert()
 	{
-		return alert.isDisplayed();
+		return loginpagealert.isDisplayed();
 	}
 	public boolean isHomePageLoaded()
 	{
-		return dashboard.isDisplayed();
+		return loginpagedashboard.isDisplayed();
 	}  
-	public boolean incorrectUsername()
-	{
-		return alert.isDisplayed();
-	}
-	public boolean IncorrectUsernameAndPassword()
-	{
-		return alert.isDisplayed();
-	}  
-
 }

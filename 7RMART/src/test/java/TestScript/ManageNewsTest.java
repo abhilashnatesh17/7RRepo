@@ -12,18 +12,19 @@ import Pages.ManageNewsPage;
 import Utilities.ExcelUtility;
 
 
-
-
 public class ManageNewsTest extends Base{
 	
 	public ManageNewsPage managenewspage;
 	public HomePageLogoutPage homepagelogoutpage;
 	
-	@Test
+	@Test (description="verify The User Is Able To create manage news")
 	public void manageNews() throws IOException
 	{
-		String username="admin";
-		String password="admin";
+//		String username="admin";
+//		String password="admin";
+		
+		String username=ExcelUtility.getStringData(1,0,"login");  
+		String password=ExcelUtility.getStringData(1,1,"login");
 		
 	//	String textfield="Manage News is the Discount sale upto 50%"; 
 		
@@ -36,7 +37,7 @@ public class ManageNewsTest extends Base{
 		homepagelogoutpage=loginpage.signIn();
 		
 	
-		managenewspage=homepagelogoutpage.manageinfo();
+		managenewspage=homepagelogoutpage.manageInfo();
 	
 		managenewspage.newbutton().text(textfield).save();
 

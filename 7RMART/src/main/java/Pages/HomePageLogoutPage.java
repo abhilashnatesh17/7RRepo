@@ -22,32 +22,34 @@ public class HomePageLogoutPage {
 	@FindBy(xpath="(//a[@class='small-box-footer'])[9]")private WebElement manageinfo;
 	
 	
-	public AdminUserPage adminusermoreinfo()
+	public AdminUserPage adminUserMoreInfo()
 	{
 		adminuser.click();
 		return new AdminUserPage(driver) ;
 	}
 			
-	public ManageCatagoryPage manageCatagorymoreinfo()
+	public ManageCatagoryPage manageCatagoryMoreInfo()
 	{
 		managecatagory.click();
 		return new ManageCatagoryPage(driver);
 	}
 	
-	public ManageNewsPage manageinfo()
+	public ManageNewsPage manageInfo()
 	{		
 		manageinfo.click();
 		return new ManageNewsPage(driver);
 	}
 	
 		
-	public void adminClick()
+	public HomePageLogoutPage adminClick()
 	{
 		adminclick.click();
+		return this;
 	}
-	public void logOut()
+	public HomePageLogoutPage logOut()
 	{
 		logout.click();
+		return this;
 	}
 	public boolean SuccessFullyLogout()
 	{

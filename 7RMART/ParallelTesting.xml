@@ -3,6 +3,9 @@
 
 <suite name="MultiBrowserTesting" parallel="tests" thread-count="2">
   <parameter name="browser" value="Chrome"></parameter>
+  <listeners>
+ <listener class-name="generateReport.Listeners"></listener>
+ </listeners>
  
   <test name="Test1">
  
